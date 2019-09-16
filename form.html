@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="contact-container">
+        <form id="contact-form" action= "ajax_form.php" method= "POST">
+            <div><label>Имя: <input type="text" name="name" maxlength="255"> </label></div>
+            <div><label>E-mail: <input type="text" name="email" maxlength="255"></label></div>
+            <div>
+                <label>Сообщение:<br>
+                    <textarea rows="10" cols="45" name="message" maxlength="65535"></textarea>
+                </label>
+            </div>
+            <div>
+                <img src='captcha/captcha.php' id='captcha-image' alt="captcha">
+                <a href="javascript:void(0);" onclick="document.getElementById('captcha-image').src = 'captcha/captcha.php';">
+                    Обновить капчу
+                </a>
+            </div>
+            <div><label>Введите капчу: <input type="text" name="<?= $captcha_code; ?>"></label></div>
+
+            <button title="Заполните все поля, чтобы отправить форму." disabled>Отправить</button>
+        </form>
+    </div>
+    <div id="error-container" class="error"></div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

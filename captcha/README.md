@@ -1,0 +1,1 @@
+[Кптча своими руками](http://cccp-blog.com/koding/kak-sdelat-kapchu-na-php)
